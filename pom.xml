@@ -27,7 +27,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>11</java.version>
-        <spring-kafka.version>2.4.6.RELEASE</spring-kafka.version>
+        <spring-kafka.version>2.5.0.RELEASE</spring-kafka.version>
         <lombok.version>1.18.12</lombok.version>
     </properties>
 
