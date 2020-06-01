@@ -35,9 +35,7 @@ public class KafkaConfiguration {
 
     @Bean
     public ProducerFactory<String, IdempotentMessage> producerFactory() {
-        DefaultKafkaProducerFactory<String, IdempotentMessage> producerFactory = new DefaultKafkaProducerFactory<>(producerConfigs());
-        producerFactory.setTransactionIdPrefix("payment.publish."); //makes producer is idempotent
-        return producerFactory;
+        return new DefaultKafkaProducerFactory<>(producerConfigs());
     }
 
     @Bean
@@ -56,7 +54,7 @@ public class KafkaConfiguration {
         Map<String, Object> props = new HashMap<>();
         props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
         props.put(ProducerConfig.ACKS_CONFIG, "all");
-        props.put(ProducerConfig.TRANSACTIONAL_ID_CONFIG, "payment.publish.");  //to identify producer instances on restart
+        props.put(ProducerConfig.TRANSACTIONAL_ID_CONFIG, "payment.publish.");  //makes producer is idempotent
         props.put(ProducerConfig.ENABLE_IDEMPOTENCE_CONFIG, "true");
         props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
         props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, JsonSerializer.class);
