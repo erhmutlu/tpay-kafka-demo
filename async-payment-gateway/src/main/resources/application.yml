@@ -1,0 +1,12 @@
+spring:
+  kafka:
+    bootstrap-servers: 127.0.0.1:9092
+
+kafka:
+  topics:
+    payment: t_payment_request
+
+logging:
+  config: classpath:logback.xml
+  file:
+    name: ${java.io.tmpdir}/tpay-kafka-demo-payment-gateway.log
