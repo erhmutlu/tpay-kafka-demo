@@ -3,6 +3,7 @@ package org.erhanmutlu.asyncpaymentgateway.application.controller.contract.reque
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
+import org.erhanmutlu.asyncpaymentgateway.domain.PaymentPhase;
 
 import java.math.BigDecimal;
 
@@ -12,7 +13,7 @@ public class PayRequest {
 
     private String referenceId;
     @JsonIgnore
-    private String phase;
+    private PaymentPhase phase;
     private BigDecimal amount;
     private String currency = "TRY";
     private Integer installment;

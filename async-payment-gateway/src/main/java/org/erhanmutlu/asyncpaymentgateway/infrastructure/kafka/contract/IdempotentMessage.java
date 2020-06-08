@@ -7,9 +7,11 @@ import java.util.UUID;
 @Getter
 public abstract class IdempotentMessage {
 
-    private String trackingNumber;
+    private final String type;
+    private final String trackingNumber;
 
-    public IdempotentMessage() {
+    public IdempotentMessage(String type) {
+        this.type = type;
         this.trackingNumber = UUID.randomUUID().toString();
     }
 }

@@ -1,0 +1,11 @@
+server:
+  port: 8081
+
+spring:
+  kafka:
+    bootstrap-servers: 127.0.0.1:9092
+
+logging:
+  config: classpath:logback.xml
+  file:
+    name: ${java.io.tmpdir}/iyzico-kafka-demo-payment-consumer.log

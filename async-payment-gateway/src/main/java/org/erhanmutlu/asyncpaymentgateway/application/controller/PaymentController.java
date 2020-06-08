@@ -2,6 +2,7 @@ package org.erhanmutlu.asyncpaymentgateway.application.controller;
 
 import org.erhanmutlu.asyncpaymentgateway.application.controller.contract.request.PayRequest;
 import org.erhanmutlu.asyncpaymentgateway.application.controller.contract.response.PayResponse;
+import org.erhanmutlu.asyncpaymentgateway.domain.PaymentPhase;
 import org.erhanmutlu.asyncpaymentgateway.domain.service.PaymentService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,7 +21,7 @@ public class PaymentController {
 
     @PostMapping("/auth")
     public PayResponse auth(@RequestBody PayRequest payRequest) {
-        payRequest.setPhase("AUTH");
+        payRequest.setPhase(PaymentPhase.AUTH);
         String uniqueId = paymentService.pay(payRequest);
         return new PayResponse(uniqueId);
     }

@@ -9,18 +9,16 @@ import java.math.BigDecimal;
 @Getter
 public class PayEvent extends IdempotentMessage {
 
-    private String referenceId;
-    private String phase;
-    private BigDecimal amount;
-    private String currency;
-    private Integer installment;
-    private String cardUserKey;
-    private String cardKey;
+    private final String referenceId;
+    private final BigDecimal amount;
+    private final String currency;
+    private final Integer installment;
+    private final String cardUserKey;
+    private final String cardKey;
 
     public PayEvent(PayRequest payRequest) {
-        super();
+        super(payRequest.getPhase().name());
         this.referenceId = payRequest.getReferenceId();
-        this.phase = payRequest.getPhase();
         this.amount = payRequest.getAmount();
         this.currency = payRequest.getCurrency();
         this.installment = payRequest.getInstallment();
