@@ -8,4 +8,4 @@ spring:
 logging:
   config: classpath:logback.xml
   file:
-    name: ${java.io.tmpdir}/iyzico-kafka-demo-async-payment-processor.log
+    name: ${java.io.tmpdir}/iyzico-kafka-demo-payment-request-logger.log

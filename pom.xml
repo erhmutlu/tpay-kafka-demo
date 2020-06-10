@@ -10,6 +10,7 @@
     <modules>
         <module>async-payment-gateway</module>
         <module>async-payment-processor</module>
+        <module>payment-request-logger</module>
     </modules>
 
     <packaging>pom</packaging>

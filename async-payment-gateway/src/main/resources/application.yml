@@ -9,4 +9,4 @@ kafka:
 logging:
   config: classpath:logback.xml
   file:
-    name: ${java.io.tmpdir}/tpay-kafka-demo-payment-gateway.log
+    name: ${java.io.tmpdir}/tpay-kafka-demo-async-payment-gateway.log

@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 
 @Slf4j
 @Service
-@KafkaListener(topics = "t_payment_request", groupId = "payment-group-1", containerFactory = "kafkaListenerContainerFactory")
+@KafkaListener(topics = "t_payment_request", groupId = "payment-processor-group", containerFactory = "kafkaListenerContainerFactory")
 public class PaymentConsumer {
 
     @KafkaHandler

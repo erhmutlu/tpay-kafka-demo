@@ -22,7 +22,7 @@ public class PaymentController {
     @PostMapping("/auth")
     public PayResponse auth(@RequestBody PayRequest payRequest) {
         payRequest.setPhase(PaymentPhase.AUTH);
-        String uniqueId = paymentService.pay(payRequest);
-        return new PayResponse(uniqueId);
+        String trackingNumber = paymentService.pay(payRequest);
+        return new PayResponse(trackingNumber);
     }
 }
